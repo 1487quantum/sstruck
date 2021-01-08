@@ -3,9 +3,13 @@
     <h1>{{title}}</h1>
     <p>{{slogan}}</p>
     <hr class="col-lg-4"/>
-  <StockCardStack
-  :stcards="stockList"
-  />
+    <StockCardStack
+    :stcards="stockList"
+    @cardAccepted="handleCardAccepted"
+    @cardRejected="handleCardRejected"
+    @cardSkipped="handleCardSkipped"
+    @hideCard="removeCardFromDeck"
+    />
   </div>
 </template>
 
@@ -23,7 +27,7 @@ export default {
       slogan: 'Find the stocks you love!',
       stockList: [
         {
-          c_img: 'elon',
+          c_img: 'elon.png',
           c_title: 'Tesla Inc',
           c_ticker: 'TSLA',
           c_price: 816.04,
@@ -32,16 +36,16 @@ export default {
           c_desc: "Tesla, Inc. is an American electric vehicle and clean energy company based in Palo Alto, California. Tesla's current products include electric cars, battery energy storage from home to grid scale, solar panels and solar roof tiles, as well as other related products and services. "
         },
         {
-          c_img: 'elon',
+          c_img: 'goog.jpg',
           c_title: 'Google',
           c_ticker: 'GOOG',
           c_price: 231.47,
           c_pct: 0.5,
           c_sym: 0,
-          c_desc: "Tesla, Inc. is an American electric vehicle and clean energy company based in Palo Alto, California. Tesla's current products include electric cars, battery energy storage from home to grid scale, solar panels and solar roof tiles, as well as other related products and services. "
+          c_desc: "Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. It is considered one of the Big Five technology companies in the U.S."
         },
         {
-          c_img: 'elon',
+          c_img: 'elon.png',
           c_title: 'Alibaba',
           c_ticker: 'BABA',
           c_price: 231.47,
@@ -57,6 +61,20 @@ export default {
       },
     };
   },
+  methods: {
+    handleCardAccepted() {
+      console.log("handleCardAccepted");
+    },
+    handleCardRejected() {
+      console.log("handleCardRejected");
+    },
+    handleCardSkipped() {
+      console.log("handleCardSkipped");
+    },
+    removeCardFromDeck() {
+      this.stockList.shift();
+    }
+  }
 }
 </script>
 

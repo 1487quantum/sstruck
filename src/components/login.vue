@@ -1,5 +1,5 @@
 <template>
-  <div class="login-field card col-lg-4 mx-auto m-4">
+  <div class="login-field card col-6 mx-auto m-4">
     <!-- Form -->
     <div class="m-4">
       <label for="email">Your Email</label>
