@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-  <h1>{{title}}</h1>
-<p>{{slogan}}</p>
-<hr class="col-lg-4"/>
-<login/>
-
+    <h1>{{title}}</h1>
+    <p>{{slogan}}</p>
+    <hr class="col-lg-4"/>
+<StockCard/>
   </div>
 </template>
 
 <script>
-import login from "./components/login";
+import StockCard from "@/components/StockCard";
+
 export default {
   name: 'App',
-  components: { login },
+  components: {
+    StockCard,
+  },
   data() {
     return{
       title: 'StockStruck',
@@ -21,9 +23,9 @@ export default {
       user:{
         id:1,
         username: 'hello_world'
-        }
-        }
-  }
+      },
+    };
+  },
 }
 </script>
 
