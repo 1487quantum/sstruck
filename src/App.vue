@@ -1,15 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+  <h1>{{title}}</h1>
+<p>{{slogan}}</p>
+<hr class="col-lg-4"/>
+<login/>
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import login from "./components/login";
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: { login },
+  data() {
+    return{
+      title: 'StockStruck',
+      slogan: 'Find the stocks you love!',
+      followers:0,
+      user:{
+        id:1,
+        username: 'hello_world'
+        }
+        }
   }
 }
 </script>
@@ -22,5 +35,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
 }
 </style>
