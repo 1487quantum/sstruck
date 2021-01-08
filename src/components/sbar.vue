@@ -9,6 +9,7 @@
       <a class="nav-link" href="#">Watchlist</a>
       <a class="nav-link " href="#">Settings</a>
     </nav>
+
   </div>
 </template>
 

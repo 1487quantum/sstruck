@@ -16,6 +16,7 @@
 import StockCardStack from "@/components/StockCardStack";
 import sbar from "@/components/sbar";
 
+
 export default {
   name: 'App',
   components: {
