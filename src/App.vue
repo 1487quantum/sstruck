@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <h1>{{title}}</h1>
-    <p>{{slogan}}</p>
-    <hr class="col-lg-4"/>
-
+    <sbar/>
     <StockCardStack
     :stcards="stockList"
     @cardAccepted="handleCardAccepted"
@@ -17,11 +14,13 @@
 
 <script>
 import StockCardStack from "@/components/StockCardStack";
+import sbar from "@/components/sbar";
 
 export default {
   name: 'App',
   components: {
     StockCardStack,
+    sbar,
   },
   data() {
     return{

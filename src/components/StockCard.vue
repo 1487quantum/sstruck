@@ -27,7 +27,7 @@ const SKIP_CARD = "cardSkipped";
 
 export default {
   static: {
-    interactMaxRotation: 15,
+    interactMaxRotation: 10,
     interactOutOfSightXCoordinate: 500,
     interactOutOfSightYCoordinate: 600,
     interactYThreshold: 150,
@@ -63,9 +63,9 @@ export default {
   },
   computed: {
     transformString() {
-      const { x, y } = this.interactPosition;
-      return `translate3D(${x}px, ${y}px, 0)`;
-    }
+       const { x, y, rotation } = this.interactPosition;
+       return `translate3D(${x}px, ${y}px, 0) rotate(${rotation}deg)`;
+   }
   },
   mounted() {
     const element = this.$refs.interactElement;
@@ -175,9 +175,9 @@ export default {
 @import "../styles/index.scss";
 
 $cardsTotal: 3;
-$cardsWidth: 300px;
+$cardsWidth: 100px;
 $cardsPositionOffset: 55vh * 0.06;
-$cardsScaleOffset: 0.08;
+$cardsScaleOffset: 0.02;
 $defaultTranslation: $cardsPositionOffset * $cardsTotal;
 $defaultScale: 1 - ($cardsScaleOffset * $cardsTotal);
 
