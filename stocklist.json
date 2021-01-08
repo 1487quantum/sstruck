@@ -1,0 +1,45 @@
+{
+    "Technology": [
+        "Amazon",
+        "Facebook",
+        "Apple",
+        "Netflix",
+        "Google"
+    ],
+    "Grooming": [
+        "Coty",
+        "Ultra Beauty",
+        "Johnson & Johnson",
+        "Proctor & Gamble"
+    ],
+    "Cars": [
+        "Tesla",
+        "Nio",
+        "Toyota",
+        "Honda",
+        "Nissan",
+        "Mitsubishi"
+    ],
+    "Shopping": [
+        "Alibaba",
+        "SEA Limited"
+    ],
+    "Computer Parts": [
+        "Nvidia",
+        "Advanced Micro Devices",
+        "Intel"
+    ],
+    "Food": [
+        "Starbucks",
+        "McDonald",
+        "Haidilao",
+        "Dominos",
+        "Chipolte"
+    ],
+    "Gaming": [
+        "Razer",
+        "Netease",
+        "Activision",
+        "Electronic Arts"
+    ]
+}
