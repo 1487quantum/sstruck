@@ -1,7 +1,7 @@
 <template>
-  <div class="login-field col-lg-4 mx-auto">
+  <div class="login-field card col-6 mx-auto m-4">
     <!-- Form -->
-    <div>
+    <div class="m-4">
       <label for="email">Your Email</label>
       <div class="input-group">
         <span class="input-group-text"><span class="fas fa-envelope"></span></span>
@@ -10,7 +10,7 @@
     </div>
     <!-- End of Form -->
     <br/>
-    <div>
+    <div class="ml-4 mr-4">
       <!-- Form -->
       <div class="form-group mb-4">
         <label for="password">Your Password</label>
@@ -21,11 +21,13 @@
       </div>
       <!-- End of Form -->
     </div>
+    <div class="login-btn col-8 mx-auto ml-2 mr-2 mb-4">
+      <button type="button" class="btn btn-primary" style="float:left; width: 100px"> Login</button>
+      <button type="button" class="btn btn-primary" style="float:right; width: 100px"> Register</button>
+    </div>
+
   </div>
-  <div class="login-btn col-lg-3 mx-auto">
-    <button type="button" class="btn btn-primary" style="float:left; width:100px; height: 40px;"> Login</button>
-    <button type="button" class="btn btn-primary" style="float:right; width:100px; height: 40px;"> Register</button>
-  </div>
+
   </template>
   <script>
   export default {
