@@ -1,2 +1,2 @@
-# stk
+# Stock Struck
 Tinder for stocks
