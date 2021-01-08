@@ -5,6 +5,10 @@
     :key="card"
     :stcard="card"
     :is-current="index === 0"
+    @cardAccepted="$emit('cardAccepted');"
+      @cardRejected="$emit('cardRejected');"
+      @cardSkipped="$emit('cardSkipped');"
+      @hideCard="$emit('hideCard');"
     />
   </div>
 </template>
@@ -24,8 +28,8 @@ export default {
 };
 </script>
 
-<style>
-.stcards{
+<style lang="scss" scoped>
+.cards {
   position: relative;
   display: flex;
   margin: 50px;

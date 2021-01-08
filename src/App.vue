@@ -3,6 +3,7 @@
     <h1>{{title}}</h1>
     <p>{{slogan}}</p>
     <hr class="col-lg-4"/>
+
     <StockCardStack
     :stcards="stockList"
     @cardAccepted="handleCardAccepted"
@@ -10,6 +11,7 @@
     @cardSkipped="handleCardSkipped"
     @hideCard="removeCardFromDeck"
     />
+
   </div>
 </template>
 
@@ -45,7 +47,7 @@ export default {
           c_desc: "Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. It is considered one of the Big Five technology companies in the U.S."
         },
         {
-          c_img: 'elon.png',
+          c_img: 'logo.png',
           c_title: 'Alibaba',
           c_ticker: 'BABA',
           c_price: 231.47,
@@ -78,14 +80,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./styles/mixins.scss";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 40px;
 
 }
 </style>
