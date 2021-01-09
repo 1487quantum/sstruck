@@ -7,38 +7,22 @@
 
 <script>
 import sbar from "@/components/sbar";
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 export default {
   name: 'App',
   components: {
     sbar,
   },
+  setup() {
+      // Get toast interface
+      const toast = useToast();
+      return { toast }
+    },
   data() {
     return{
       title: 'StockStruck',
       slogan: 'Find the stocks you love!',
     };
-<<<<<<< Updated upstream
-  },
-  methods: {
-    handleCardAccepted() {
-      console.log("handleCardAccepted");
-    },
-    handleCardRejected() {
-      console.log("handleCardRejected");
-    },
-    handleCardSkipped() {
-      console.log("handleCardSkipped");
-    },
-    removeCardFromDeck() {
-      this.stockList.shift();
-    }
-=======
->>>>>>> Stashed changes
   }
 }
 </script>

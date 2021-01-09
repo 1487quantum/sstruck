@@ -1,9 +1,5 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
-<<<<<<< Updated upstream
-
-createApp(App).mount('#app')
-=======
 import router from './router'
 import Toast, { POSITION } from "vue-toastification"
 import "vue-toastification/dist/index.css";
