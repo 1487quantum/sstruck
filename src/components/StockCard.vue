@@ -27,7 +27,7 @@ const SKIP_CARD = "cardSkipped";
 
 export default {
   static: {
-    interactMaxRotation: 10,
+    interactMaxRotation: 15,
     interactOutOfSightXCoordinate: 500,
     interactOutOfSightYCoordinate: 600,
     interactYThreshold: 150,
@@ -36,6 +36,7 @@ export default {
   data() {
     return{
       isShowing: true,
+      isInteractAnimating: false,
       interactPosition: {
         x: 0,
         y: 0
@@ -57,6 +58,10 @@ export default {
       required: true
     },
     isCurrent: {
+      type: Boolean,
+      required: true
+    },
+    isAnimating: {
       type: Boolean,
       required: true
     }
@@ -199,13 +204,12 @@ $defaultScale: 1 - ($cardsScaleOffset * $cardsTotal);
   display: flex;
   max-height: 620px;
   margin: auto;
-  font-size: $fs-h2;
   font-weight: $fw-bold;
   color: $c-white;
   background-color:  $primary-bg;
   opacity: 0;
   transform: translateY($defaultTranslation) scale($defaultScale);
-  transform-origin: 50%, 100%;
+  transform-origin: 50%, 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   user-select: none;
   pointer-events: none;

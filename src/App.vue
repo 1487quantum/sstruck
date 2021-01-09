@@ -15,7 +15,7 @@
 <script>
 import StockCardStack from "@/components/StockCardStack";
 import sbar from "@/components/sbar";
-
+import { useToast } from "vue-toastification";
 
 export default {
   name: 'App',
@@ -23,6 +23,11 @@ export default {
     StockCardStack,
     sbar,
   },
+  setup() {
+      // Get toast interface
+      const toast = useToast();
+      return { toast }
+    },
   data() {
     return{
       title: 'StockStruck',
@@ -66,6 +71,9 @@ export default {
   methods: {
     handleCardAccepted() {
       console.log("handleCardAccepted");
+      this.toast.success("Added to Watchlist!", {
+          timeout: 3000
+        });
     },
     handleCardRejected() {
       console.log("handleCardRejected");
