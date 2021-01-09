@@ -4,10 +4,12 @@
     <p>{{slogan}}</p>
     <hr class="col-8"/>
     <nav class="nav nav-pills flex-column">
-      <a class="nav-link" href="#">Home</a>
-      <a class="nav-link active" href="#">My Cards</a>
-      <a class="nav-link" href="#">Watchlist</a>
-      <a class="nav-link " href="#">Settings</a>
+      <router-link class="nav-link " :to="{ name: 'Home' }">Home</router-link>
+      <router-link class="nav-link " :to="{ name: 'Cards' }">Cards</router-link>
+      <router-link class="nav-link " :to="{ name: 'Settings' }">Settings</router-link>
+      <router-link class="nav-link " :to="{ name: 'About' }">About</router-link>
+
+
     </nav>
 
   </div>
