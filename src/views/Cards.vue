@@ -8,6 +8,9 @@
   @hideCard="removeCardFromDeck"
   />
 </div>
+<div style="float:right">
+<h3>Watchlist: {{user.watchlist}}</h3>
+</div>
 </template>
 
 <script>
@@ -25,6 +28,10 @@ export default {
     },
   data() {
     return{
+      user:{
+        name: 'Adam',
+        watchlist: []
+      },
       stockList: [
         {
           c_img: 'elon.png',
@@ -71,7 +78,8 @@ export default {
     },
     removeCardFromDeck() {
       this.stockList.shift();
-    }
+      },
+
   }
 }
 </script>

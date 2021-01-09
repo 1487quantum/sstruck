@@ -16,12 +16,7 @@ export default {
     return{
       title: 'StockStruck',
       slogan: 'Find the stocks you love!',
-      followers:0,
-      user:{
-        id:1,
-        username: 'hello_world'
-      }
     }
-  }
+  },
 }
 </script>

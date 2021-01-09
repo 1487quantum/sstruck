@@ -7,6 +7,7 @@
 
 <script>
 import sbar from "@/components/sbar";
+import { useToast } from "vue-toastification";
 
 export default {
   name: 'App',
@@ -22,6 +23,10 @@ export default {
     return{
       title: 'StockStruck',
       slogan: 'Find the stocks you love!',
+      user:{
+        name: 'Adam',
+        watchlist: [],
+      }
     };
   }
 }
