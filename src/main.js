@@ -6,7 +6,7 @@ import "vue-toastification/dist/index.css";
 
 const app = createApp(App)
 let options = {
-    position: POSITION.TOP_RIGHT
+    position: POSITION.TOP_LEFT
   }
 
 app.use(Toast, options)

@@ -9,23 +9,29 @@
     />
   </div>
   <div style="float:right">
-    <h3>My Watchlist: {{user.watchlist}}</h3>
-    <h2>Current cards</h2>
-    <ul id="example-1">
+    <MyWatchList
+      :mwatchlist=user.watchlist
+    />
+    <br/>
+    <div class="currentList">
+    <h4>Current cards</h4>
+    <ul>
       <li v-for="item in stockList" :key="item.c_ticker">
         {{ item.c_ticker }}
       </li>
     </ul>
   </div>
+  </div>
 </template>
 
 <script>
 import StockCardStack from "@/components/StockCardStack";
+import MyWatchList from "@/components/MyWatchList";
 import { useToast } from "vue-toastification";
 
 export default {
   components: {
-    StockCardStack,
+    StockCardStack, MyWatchList
   },
   setup() {
     // Get toast interface
@@ -67,6 +73,7 @@ export default {
           c_sym: 2,
           c_desc: "Alibaba Group Holding Limited, also known as Alibaba Group and as Alibaba.com, is a Chinese multinational technology company specializing in e-commerce, retail, Internet, and technology."
         },
+
       ]
     }
   },
@@ -104,3 +111,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.currentList{
+  width: 250px;
+  padding: 10px 50px;
+  margin: 5px 50px;
+  box-shadow: 0 1px 3px rgba(0,0,0, 0.15);
+  text-align: left;
+}
+</style>
