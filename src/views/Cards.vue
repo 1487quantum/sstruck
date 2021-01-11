@@ -1,16 +1,22 @@
 <template>
   <div id="cards_p">
-  <StockCardStack
-  :stcards="stockList"
-  @cardAccepted="handleCardAccepted"
-  @cardRejected="handleCardRejected"
-  @cardSkipped="handleCardSkipped"
-  @hideCard="removeCardFromDeck"
-  />
-</div>
-<div style="float:right">
-<h3>Watchlist: {{user.watchlist}}</h3>
-</div>
+    <StockCardStack
+    :stcards="stockList"
+    @cardAccepted="handleCardAccepted"
+    @cardRejected="handleCardRejected"
+    @cardSkipped="handleCardSkipped"
+    @hideCard="removeCardFromDeck"
+    />
+  </div>
+  <div style="float:right">
+    <h3>My Watchlist: {{user.watchlist}}</h3>
+    <h2>Current cards</h2>
+    <ul id="example-1">
+      <li v-for="item in stockList" :key="item.c_ticker">
+        {{ item.c_ticker }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -22,16 +28,17 @@ export default {
     StockCardStack,
   },
   setup() {
-      // Get toast interface
-      const toast = useToast();
-      return { toast }
-    },
+    // Get toast interface
+    const toast = useToast();
+    return { toast }
+  },
   data() {
     return{
       user:{
         name: 'Adam',
         watchlist: []
       },
+      addStock: false,
       stockList: [
         {
           c_img: 'elon.png',
@@ -66,19 +73,33 @@ export default {
   methods: {
     handleCardAccepted() {
       console.log("handleCardAccepted");
+      this.addStock=true;
       this.toast.success("Added to Watchlist!", {
-          timeout: 3000
-        });
+        timeout: 3000
+      });
     },
     handleCardRejected() {
       console.log("handleCardRejected");
+      this.toast.error("Rejected card", {
+        timeout: 3000
+      });
     },
     handleCardSkipped() {
       console.log("handleCardSkipped");
+      this.toast.warning("Skip card", {
+        timeout: 3000
+      });
     },
     removeCardFromDeck() {
-      this.stockList.shift();
-      },
+      if(this.addStock){
+        var m_stock = this.stockList[0];
+        console.log(m_stock.c_ticker);
+        this.user.watchlist = this.user.watchlist.concat(m_stock.c_ticker);
+      }
+        this.stockList.shift();
+
+      this.addStock=false;
+    },
 
   }
 }
