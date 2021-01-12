@@ -10,17 +10,17 @@
   </div>
   <div style="float:right">
     <MyWatchList
-      :mwatchlist=user.watchlist
+    :mwatchlist=user.watchlist
     />
     <br/>
     <div class="currentList">
-    <h4>Current cards</h4>
-    <ul>
-      <li v-for="item in stockList" :key="item.c_ticker">
-        {{ item.c_ticker }}
-      </li>
-    </ul>
-  </div>
+      <h4>Current cards</h4>
+      <ul>
+        <li v-for="item in stockList" :key="item.c_ticker">
+          {{ item.c_ticker }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -36,7 +36,10 @@ export default {
   setup() {
     // Get toast interface
     const toast = useToast();
-    return { toast }
+    return {
+      toast,
+    };
+
   },
   data() {
     return{
@@ -103,7 +106,7 @@ export default {
         console.log(m_stock.c_ticker);
         this.user.watchlist = this.user.watchlist.concat(m_stock.c_ticker);
       }
-        this.stockList.shift();
+      this.stockList.shift();
 
       this.addStock=false;
     },

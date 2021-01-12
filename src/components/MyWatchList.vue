@@ -3,6 +3,7 @@
   <h4 style="padding: 8px 2px;" >My Watchlist</h4>
   <p> {{mwatchlist}}</p>
 </div>
+
 </template>
 
 <script>
